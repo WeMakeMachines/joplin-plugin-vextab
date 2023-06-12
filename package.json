@@ -8,7 +8,11 @@
   },
   "license": "MIT",
   "keywords": [
-    "joplin-plugin"
+    "joplin",
+    "joplin-plugin",
+    "vextab",
+    "guitar",
+    "tablature"
   ],
   "files": [
     "publish"
