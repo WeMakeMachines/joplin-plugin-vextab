@@ -28,7 +28,7 @@ A Joplin plugin for rendering guitar tablature using the VexTab API 🎼🎸
 
 This will render the image below;
 
-![VexFlow](./vexflow-sample.png)
+![VexFlow](vexflow-sample.png)
 
 ## VexTab
 
