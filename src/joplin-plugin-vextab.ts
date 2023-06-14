@@ -1,6 +1,9 @@
 import VexTabWrapper from "./VexTabWrapper";
+import { captureOptionsFromTokenInfo } from "./utils";
 
 export default function () {
+  const pluginToken = "joplin-plugin-vextab";
+
   return {
     plugin: function (markdownIt: any) {
       const defaultRender: Function =
@@ -23,11 +26,14 @@ export default function () {
         self: any
       ) {
         const token = tokens[idx];
-        if (token.info !== "joplin-plugin-vextab")
+        if (!token.info.startsWith(pluginToken))
           return defaultRender(tokens, idx, options, env, self);
         try {
+          const options = captureOptionsFromTokenInfo(
+            token.info.split(pluginToken)[1]
+          );
           markdownIt.utils.escapeHtml(token.content);
-          const vexTabWrapper = new VexTabWrapper();
+          const vexTabWrapper = new VexTabWrapper(options);
           const contentHtml = vexTabWrapper.render(token.content);
           return `<div class="joplin-editable">${contentHtml}</div>`;
         } catch (error) {

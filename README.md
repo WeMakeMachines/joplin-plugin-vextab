@@ -16,7 +16,7 @@ A Joplin plugin for rendering guitar tablature using the VexTab API 🎼🎸
 2. Create a new note, or edit an existing note
 3. Create a fenced block with the **codetype** `joplin-plugin-vextab`
 
-### Example
+#### Example
 
     ```joplin-plugin-vextab
       tabstave notation=true key=A time=4/4
@@ -28,7 +28,23 @@ A Joplin plugin for rendering guitar tablature using the VexTab API 🎼🎸
 
 This will render the image below;
 
-![VexFlow](vexflow-sample.png)
+![VexFlow](/docs/vexflow-sample.png)
+
+### Customising
+
+There are a few options you can pass into VexTab to customise its appearance.
+
+- `"scale"`: number
+- `"width"`: number
+- `"x"`: number
+- `"y"`: number
+
+Write these as a JSON object after the token info;
+
+#### Example
+
+    ```joplin-plugin-vextab { "scale": 2, "width": 500 }
+    ```
 
 ## VexTab
 
